@@ -1,0 +1,492 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #d895d5;
+  color: #fff;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 20%;
+  padding: 10px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+}
+.Dis{
+
+  padding-left: 20%;
+
+
+
+
+
+
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  background-color: #333;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  padding: 14px 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+#submenu {
+  background-color: #444;
+  padding: 10px;
+}
+
+#submenu a {
+  display: block;
+  color: white;
+  padding: 5px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+footer {
+  background-color: #adbba8;   /* Color de fondo rosado suave */
+  color: #333;                 /* Color del texto */
+  text-align: center;          /* Centrar el contenido */
+  padding: 20px;               /* Espaciado interno */
+  position: relative;          /* Posicionamiento normal (puedes cambiar a fixed si quieres que siempre esté abajo) */
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+footer a {  
+  color: #1b1919;              /* Color de los enlaces */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;  /* Subrayar al pasar el mouse */
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+}
+
+.category-item {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #ffbbbb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+  transform: scale(1.1);
+}
+
+.category-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.category-item img {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.category-item::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #000000;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: rotateText 10s linear infinite;
+  border-radius: 50%;
+  white-space: nowrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.category-item::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -20px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000000;
+  border-radius: 50%;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 1px 1px #fff;
+  transform: rotate(0deg);
+  animation: spin 20s linear infinite;
+}
+
+/* Rueda animada (opcional) */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .category-item {
+    width: 120px;
+    height: 120px;
+  }
+
+  .category-item::before {
+    font-size: 0.7rem;
+  }
+
+  .category-item img {
+    width: 65%;
+    height: 65%;
+  }
+}
+
+
+
+
+
+.conta-wrapper {
+  display: flex;
+  justify-content: center; /* Centra las cards en la pantalla */
+  margin-top: 50px; /* Separa las cards del menú */
+  min-height: 500px; /* Asegura que el contenedor tenga suficiente altura para las cards */
+  flex-wrap: wrap; /* Permite que las cards se ajusten en varias filas si es necesario */
+  align-items: flex-start; /* Alinea las cards al principio del contenedor */
+}
+
+.conta {
+  display: flex;
+  flex-wrap: wrap; /* Asegura que las cards se ajusten a nuevas filas si no caben en la misma */
+  justify-content: space-between; /* Espacio uniforme entre las cards */
+  gap: 20px; /* Aumenta el espacio entre las cards */
+  width: 100%; /* Asegura que el contenedor de las cards ocupe todo el ancho disponible */
+  max-width: 1200px; /* Limita el ancho total para no hacer las cards demasiado anchas */
+}
+
+.espacio {
+  width: 250px; /* Establece un tamaño uniforme para todas las cards */
+  height: 400px; /* Establece la altura uniforme para todas las cards */
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia el contenido de manera uniforme */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Añade un margen inferior para asegurarse de que no haya nada debajo */
+}
+
+.espacio img {
+  width: 100%; /* La imagen ocupa todo el ancho de la card */
+  height: 200px; /* Aumenta la altura de la imagen */
+  object-fit: contain; /* Asegura que la imagen se vea completamente sin recorte */
+  border-radius: 10px;
+}
+
+
+
+.titulo, .precio {
+  margin: 15px 0;
+}
+
+button {
+  margin-top: auto;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #fce1e1, #fce1e1);
+  color: rgb(249, 249, 249);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ffbbbb, #fbd1d1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 991px) {
+  .espacio {
+     width: 48%; /* Dos cards por fila en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .espacio {
+     width: 100%; /* Una card por fila en pantallas pequeñas */
+  }
+}
+
+
+ 
+
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fce1e1; 
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+  background-color: rgb(0, 0, 0); /* Un color más fuerte al pasar el mouse */
+}
+
+#cart-count {
+  background: white;
+  color: #fce1e1;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 50%;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff; /* Color llamativo */
+  color: white;
+  padding: 6px 10px; /* 🔥 Reduce el tamaño */
+  font-size: 16px; /* 🔥 Reduce el tamaño del icono */
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#cart-count {
+  background: white;
+  color:#fce1e1;
+  font-size: 12px; /* 🔥 Reduce el tamaño del número */
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+
+
+.contenido1 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.conta {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cards se ajusten a una nueva fila si no caben */
+  justify-content: center; /* Centra las cards */
+  gap: 20px; /* Espacio entre las cards */
+  max-width: 1200px; /* Limita el ancho total */
+}
+
+.espacio {
+  background-color: white;
+  width: 280px; /* Establece un tamaño fijo para cada card */
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.5s;
+}
+
+.espacio:hover {
+  transform: scale(1.05); /* Efecto de agrandado al pasar el ratón */
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.titulo {
+  margin: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.precio {
+  color: rgb(0, 0, 0);
+  margin: 8px;
+}
+
+button {
+  border: 2px solid transparent;
+  background: linear-gradient(to right, #fce1e1,#facece);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Borde dinámico en hover */
+button:hover {
+  border-color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #ffb5b5, #fce1e1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Efecto de resplandor */
+button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 8px;
+  border: 2px solid white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar el borde brillante al pasar el mouse */
+button:hover::before {
+  opacity: 1;
+}
+
+button a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: block;
+}

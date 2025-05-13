@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrusel Full Width Autoplay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <nav class="menu">
+    <ul>
+      <li><a href="nosotros.html">nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="#" id="toggle">Más</a></li>
+      <label for="busqueda"></label>
+      <input type="search" id="busqueda" placeholder="Buscar">
+      <button onclick="buscarTexto()">Buscar</button>
+    
+    
+    </ul>
+    <div id="submenu" class="hidden">
+      <a href="#">Opción 1</a>
+      <a href="#">Opción 2</a>
+    </div>
+  </nav> 
+</div>
+ <h1>The Mela Trenzas</h1> 
+  <div class="carousel-container">
+    <button class="carousel-button prev">&#10094;</button>
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Puedes reemplazar estas imágenes -->
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/c7/00/c9/c700c91fa95f9acb194d2b01bfed4251.jpg " alt="1" /></div>
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/8c/e4/00/8ce400a3c99eccc61264b34840acd6c9.jpg " alt="2" /></div>
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/75/ff/43/75ff430b2b2993d728ce7ee871aec4bb.jpg" alt="3" /></div>
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/cf/1d/00/cf1d0065d275fee78217afc024bf29b7.jpg " alt="4" /></div>
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/56/f5/68/56f5684769e783e5227d9758dcd0faea.jpg " alt="5" /></div>
+      <div class="carousel-item"><img src="https://i.pinimg.com/236x/5d/15/44/5d1544f12dc454043fbc5b17c27dda1c.jpg" alt="6" /></div>
+    </div>
+    <button class="carousel-button next">&#10095;</button>
+  </div>
+
+
+   
+
+
+  <footer>
+    <p>&copy; 2025 Mi Página de Trenzas. Todos los derechos reservados.</p>
+    <p>Contacto: <a href="mailto:contacto@trenzas.com">contacto@trenzas.com</a></p>
+  </footer>
+  
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  const items = track.querySelectorAll('.carousel-item');
+
+  let currentIndex = 0;
+  const visibleItems = 5;
+
+  function updateCarousel() {
+    const itemWidth = items[0].offsetWidth;
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+
+  function goNext() {
+    if (currentIndex < items.length - visibleItems) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // reinicia al principio
+    }
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener('click', goNext);
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = items.length - visibleItems;
+    }
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+
+  // ⏱️ Autoplay cada 4 segundos
+  setInterval(goNext, 4000);
+</script>
