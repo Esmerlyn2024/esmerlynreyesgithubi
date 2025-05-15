@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -77,6 +90,18 @@
         </div>
     </section>
 
+<button onclick="window.location.href='https://daaiwebtech.github.io/'" style="
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: rgb(173, 33, 33);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+">
+  Volver Atras
+</button>
 
 
 
@@ -95,6 +120,52 @@
 
 
 
+
+
+
+
+
+
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  const items = track.querySelectorAll('.carousel-item');
+
+  let currentIndex = 0;
+  const visibleItems = 5;
+
+  function updateCarousel() {
+    const itemWidth = items[0].offsetWidth;
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+
+  function goNext() {
+    if (currentIndex < items.length - visibleItems) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // reinicia al principio
+    }
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener('click', goNext);
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = items.length - visibleItems;
+    }
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+
+  // ⏱️ Autoplay cada 4 segundos
+  setInterval(goNext, 4000);
+</script>
 
 
 
